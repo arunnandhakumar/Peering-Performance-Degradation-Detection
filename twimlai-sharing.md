@@ -14,8 +14,19 @@ Enterprise Campus Network Switches hosts a suite of L3 - Routing Protocols and L
 
 In peer to peer communicating protocols, most of the protocols have FSM states for protocol functionality and the behavior, and health of the protocol is determined by the FSM transitions of the protocol entity. Each FSM have several transitions and takes finite time between the transitions. Some of the transitions states provides key information about protocol peering status and it is required to alert the administrator to take further action based on these transition states. 
 
-As per our solution we collect the FSM transitions for monitoring occurred for every 30 mins for monitoring protocols from the device and calculate (Min, Max, Mean and Average) transition time for the transition states and if any deviation is observed alter the administrator about the deviation observed for the peers.
+As per our solution we collect the FSM transitions for monitoring occurred for every 30 mins for monitoring protocols from the device and calculate (Min, Max, Mean and Average) transition time for the transition states and if any deviation is observed alert the administrator about the deviation observed for the peers.
 
 # Code
 
 [PPDD Checker](src/ppdd_checker.py)
+
+# Results, Outcomes, Conclusions
+
+1. Min/Max/Mean/Average state transitions timings are calculated
+2. Any deviation is compared with baselined values and adminsitrator is alerted
+3. New averages / clusters are calculated and baseline values are updated
+
+# Open questions/issues
+
+1. False alarms (expected deviations during upgradation) needs to be ignored by administrator
+2. Long & stable network will increase Mean/Average times. This might lead to ignoring actually deviations which might be less than Min values.
