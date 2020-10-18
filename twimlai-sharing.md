@@ -2,8 +2,6 @@
 
 # Authors
 
-# Authors
-
 Arun Nandha Kumar S, Hewlett Packard Enterprise <br>
 Jayanth A, Hewlett Packard Enterprise
 
